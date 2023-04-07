@@ -12,18 +12,16 @@ test('create class Character', () => {
     type: 'Bowman',
     health: 100,
     level: 1,
-    attack: 25,
-    defence: 25,
   };
-  expect(new Character('Robin', 'Bowman', 25, 25)).toEqual(expected);
+  expect(new Character('Robin', 'Bowman')).toEqual(expected);
 });
 
 test('testing name error', () => {
-  expect(() => { new Character('Ro', 'Bowman', 25, 25); }).toThrow(new Error('Длина имени должна быть от 3 до 10 символов'));
+  expect(() => { new Character('Ro', 'Bowman'); }).toThrow(new Error('Длина имени должна быть от 3 до 10 символов'));
 });
 
 test('testing type error', () => {
-  expect(() => { new Character('Hero', 'Knight', 25, 25); }).toThrow(new Error('Неизвестный класс персонажа'));
+  expect(() => { new Character('Hero', 'Knight'); }).toThrow(new Error('Неизвестный класс персонажа'));
 });
 
 test('create class Bowman', () => {
